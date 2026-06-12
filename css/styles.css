@@ -1,0 +1,244 @@
+:root {
+    --bg: #f1efe9 ;
+    --panel: #ffffff ;
+    --ink: #2b2b33 ;
+    --muted: #8b8a94 ;
+    --accent: #d9694f ;
+    --accent-soft: #fbe6e0 ;
+    --border: #e8e6e1 ;
+    --radius: 14px ;
+    --shadow: 0 6px 18px rgba(43, 43, 51, 0.06) ;
+}
+
+* {
+    box-sizing: border-box ;
+}
+
+body {
+    background-color: var(--bg) ;
+    color: var(--ink) ;
+    font-family: 'Inter', sans-serif ;
+    padding-top: 30px ;
+    padding-bottom: 40px ;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif ;
+    font-weight: 700 ;
+    text-align: center ;
+    letter-spacing: 0.06em ;
+    text-transform: uppercase ;
+    margin-bottom: 28px ;
+    color: var(--ink) ;
+}
+
+h1::after {
+    content: "" ;
+    display: block ;
+    width: 60px ;
+    height: 4px ;
+    background: var(--accent) ;
+    margin: 12px auto 0 ;
+    border-radius: 2px ;
+}
+
+#errors {
+    display: none ;
+    border-radius: var(--radius) ;
+    border: none ;
+    box-shadow: var(--shadow) ;
+}
+
+#authentication:not(:empty) {
+    background: var(--panel) ;
+    border-radius: var(--radius) ;
+    box-shadow: var(--shadow) ;
+    padding: 16px ;
+    margin-bottom: 20px ;
+}
+
+#thumbnails {
+    margin: 0 0 20px 0 ;
+    padding: 10px 6px ;
+    flex-wrap: nowrap ;
+    overflow-x: auto ;
+    gap: 10px ;
+}
+
+#thumbnails img {
+    width: 64px ;
+    height: 64px ;
+    object-fit: cover ;
+    border: 2px solid var(--panel) ;
+    border-radius: 10px ;
+    cursor: pointer ;
+    box-shadow: var(--shadow) ;
+    transition: transform 0.15s ease, border-color 0.15s ease ;
+    flex: 0 0 auto ;
+}
+
+#thumbnails img:hover {
+    transform: translateY(-3px) ;
+    border-color: var(--accent) ;
+}
+
+#photo {
+    background-color: var(--panel) ;
+    border-radius: var(--radius) ;
+    box-shadow: var(--shadow) ;
+    min-height: 380px ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    margin-bottom: 20px ;
+    overflow: hidden ;
+}
+
+    #photo img {
+    max-width: 100% ;
+    max-height: 380px ;
+    object-fit: contain ;
+}
+
+#photo .text-muted {
+    font-family: 'Poppins', sans-serif ;
+    color: var(--muted) ;
+    font-weight: 500 ;
+}
+
+#comments {
+    background-color: var(--panel) ;
+    border-radius: var(--radius) ;
+    box-shadow: var(--shadow) ;
+    padding: 16px 18px ;
+    margin-bottom: 20px ;
+    min-height: 100px ;
+}
+
+.comment {
+    border-bottom: 1px solid var(--border) ;
+    padding: 10px 0 ;
+}
+
+.comment:last-child {
+    border-bottom: none ;
+}
+
+.comment .author {
+    font-weight: 600 ;
+    color: var(--accent) ;
+}
+
+.comment .date {
+    font-size: 0.8em ;
+    color: var(--muted) ;
+}
+
+#comments-add {
+    background-color: var(--panel) ;
+    border-radius: var(--radius) ;
+    box-shadow: var(--shadow) ;
+    padding: 18px ;
+}
+
+#comments-add .form-control {
+    border-radius: 10px ;
+    border-color: var(--border) ;
+}
+
+#comments-add .form-control:focus {
+    border-color: var(--accent) ;
+    box-shadow: 0 0 0 0.2rem var(--accent-soft) ;
+}
+
+#comments-add i {
+    color: var(--muted) ;
+    font-size: 1.1em ;
+}
+
+#comments-add .btn {
+    border-radius: 10px ;
+    background-color: var(--accent) ;
+    border-color: var(--accent) ;
+    color: #fff ;
+}
+
+ #comments-add .btn:hover {
+    background-color: #c2553c ;
+    border-color: #c2553c ;
+}
+
+
+#chat {
+    background-color: var(--panel) ;
+    border-radius: var(--radius) ;
+    box-shadow: var(--shadow) ;
+    padding: 18px ;
+    height: 100% ;
+    display: flex ;
+    flex-direction: column ;
+}
+
+#chat-title {
+    font-family: 'Poppins', sans-serif ;
+    font-weight: 600 ;
+    margin-bottom: 12px ;
+    color: var(--ink) ;
+    display: flex ;
+    align-items: center ;
+    gap: 8px ;
+}
+
+#chat-title::before {
+    content: "" ;
+    display: inline-block ;
+    width: 10px ;
+    height: 10px ; 
+    background: #6fcf97 ;
+    border-radius: 50% ; 
+}
+
+#chat-messages {
+    flex-grow: 1 ;
+    min-height: 420px ;
+    overflow-y: auto ;
+    border: 1px solid var(--border) ;
+    border-radius: 10px ;
+    padding: 12px ;
+    margin-bottom: 12px ;
+    background-color: #fbfaf8 ;
+}
+
+.chat-message {
+    margin-bottom: 10px ;
+    font-size: 0.9em ;
+    background: var(--accent-soft) ;
+    border-radius: 10px ;
+    padding: 6px 10px ;
+    display: inline-block ;
+    max-width: 90% ;
+} 
+
+.chat-message .author {
+    font-weight: 600 ;
+    color: var(--accent) ; 
+    display: block ;
+    font-size: 0.85em ;
+}
+
+#chat-form .form-control {
+    border-radius: 10px 0 0 10px ;
+    border-color: var(--border) ;
+}
+
+#chat-form .btn {
+    border-radius: 0 10px 10px 0 ;
+    background-color: var(--accent) ;
+    border-color: var(--accent) ;
+    color: #fff ;
+}
+
+#chat-form .btn:hover {
+    background-color: #c2553c ;
+    border-color: #c2553c ;
+}
